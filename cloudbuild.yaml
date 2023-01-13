@@ -22,3 +22,4 @@ steps:
 images:
 - 'gcr.io/moviefun-cicd/moviefun:$SHORT_SHA'
 
+
