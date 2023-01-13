@@ -7,7 +7,7 @@ steps:
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
   id: 'Push image'
-  args: ['push', '-t', 'gcr.io/moviefun-cicd/moviefun:$SHORT_SHA']
+  args: ['push', 'gcr.io/moviefun-cicd/moviefun:$SHORT_SHA']
 
 # Deploy the container image on Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
