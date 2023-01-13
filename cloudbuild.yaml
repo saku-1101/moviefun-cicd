@@ -14,7 +14,7 @@ steps:
   entrypoint: gcloud
   id: 'Deploy'
   args: ['run', 'deploy', 'moviefun-cicd', 
-        '--image', 'gcr.io/moviefun-cicd/moviefun', 
+        '--image', 'gcr.io/moviefun-cicd/moviefun:$SHORT_SHA', 
         '--region', 'asia-northeast1', 
         '--platform', 'managed', 
         '--port', '8080',
