@@ -15,7 +15,7 @@ steps:
   id: 'Deploy'
   args: ['run', 'deploy', 'moviefun-cicd', 
         '--image', 'gcr.io/moviefun-cicd/moviefun', 
-        '--region', 'global', 
+        '--region', 'asia-northeast1', 
         '--platform', 'managed', 
         '--port', '8080',
         '--allow-unauthenticated']
