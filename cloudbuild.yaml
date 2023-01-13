@@ -1,0 +1,24 @@
+# Build the container image
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  id: 'Build image'
+  args: ['build', '-t', 'gcr.io/moviefun-cicd/moviefun:$SHORT_SHA', '-f=./Dockerfile', '.']
+
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  id: 'Push image'
+  args: ['push', '-t', 'gcr.io/moviefun-cicd/moviefun:$SHORT_SHA']
+
+# Deploy the container image on Cloud Run
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  id: 'Deploy'
+  args: ['run', 'deploy', 'moviefun-cicd', 
+        '--image', 'gcr.io/moviefun-cicd/moviefun', 
+        '--region', 'global', 
+        '--platform', 'managed', 
+        '--port', '8080',
+        '--allow-unauthenticated']
+images:
+- 'gcr.io/moviefun-cicd/moviefun:$SHORT_SHA'
+
