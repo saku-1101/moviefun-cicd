@@ -54,10 +54,34 @@
 </template>
 
 <script>
+const date = new Date();
+let year = date.getUTCFullYear();
+let month = date.getUTCMonth() + 1; // 1 ~ 12
+let day = date.getUTCDate();
+var query_lte = ''
+var query_gte = ''
+
+
+if(day.toString().length == 1){ // 一桁なら
+      day = '0' + day
+}
+if (month.toString().length == 1){ // 一桁なら
+  month = '0' + month
+  
+}
+query_lte = year + "-" + month + "-" + day
+
+if (month - 1 < 1){ // 年が変わるなら
+  year = year - 1
+  month = 12 - (month - 1)
+}
+query_gte = year + "-" + month + "-" + day
+
+
 const axios = require('axios')
 const home = 'https://api.themoviedb.org/3'
 const endpoint = '/discover/movie'
-const query_1 = '&primary_release_date.gte=2021-12-01&primary_release_date.lte=2022-01-31&with_release_type=2%7C3'
+const query_1 = '&primary_release_date.gte=' + query_gte +'&primary_release_date.lte='+ query_lte +'&with_release_type=2%7C3' // １ヶ月前〜今日
 const query_2 = '&sort_by=popularity.desc'
 const key = '?api_key=874b2c31cd678740afe326baa8408862'
 const language = '&region=JP|US&language=ja-JA&page=1'
@@ -65,9 +89,12 @@ const url = home + endpoint + key + language + query_1 + query_2
 
 export default {
   data () {
+    const date = new Date();
+    const year = date.getUTCFullYear();
+    const month = date.getUTCMonth() + 1;
     return {
       title : "🎞　絶賛上映中　🎞",
-      detail: "(2022年1月末現在)(限定公開も含む)",
+      detail: "(" + year + "/" + month + "現在)(限定公開も含む)",
       row_1: 'Popular',
       json_data: {},
       json_image: {}

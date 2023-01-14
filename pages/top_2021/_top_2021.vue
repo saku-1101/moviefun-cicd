@@ -49,19 +49,21 @@
 </template>
 
 <script>
+const date = new Date();
+const year = date.getUTCFullYear();
 const axios = require('axios')
 const home = 'https://api.themoviedb.org/3'
 const endpoint = '/discover/movie'
-const query_1 = '&primary_release_year=2021'
+const query_1 = '&primary_release_year='
 const query_2 = '&sort_by=popularity.desc'
 const key = '?api_key=874b2c31cd678740afe326baa8408862'
 const language = '&region=JP|US&language=ja-JA&page=1'
-const url = home + endpoint + key + language + query_1 + query_2
+const url = home + endpoint + key + language + query_1 + (year - 1) + query_2
 
 export default {
   data () {
     return {
-      title : '👑　2021年，世界を震わせた映画TOP20　👑',
+      title : '👑　昨年の映画TOP20　👑',
       row_1: 'Popular',
       json_data: {},
       json_image: {}

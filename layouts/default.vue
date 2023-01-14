@@ -37,7 +37,7 @@
         <template v-slot:extension>
           <v-tabs align-with-title>
             <v-tab to = '/popular_movies' style="font-family: 'Marcellus SC', serif;">🔥Popular</v-tab>
-            <v-tab to = '/top_2021' style="font-family: 'Marcellus SC', serif;">👑Best 2021</v-tab>
+            <v-tab to = '/top_2021' style="font-family: 'Marcellus SC', serif;">👑Best {{ year }}</v-tab>
             <v-tab to = '/watchable' style="font-family: 'Marcellus SC', serif;">🎞In Theatres</v-tab>
             <v-tab to = '/find_movies' style="font-family: 'Marcellus SC', serif;">👀Search</v-tab>
           </v-tabs>
@@ -108,8 +108,14 @@ export default {
       right: true,
       rightDrawer: false,
       title: 'Moviefun🎥✨',
-      links: ['/popular_movies']
+      links: ['/popular_movies'],
     }
+  },
+  computed: {
+    year(){
+      const date = new Date()
+      return date.getFullYear()
+    },
   },
   mounted() {
     this.$nextTick(() => {

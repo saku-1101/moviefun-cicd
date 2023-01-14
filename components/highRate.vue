@@ -64,9 +64,9 @@ const url = home + endpoint + key + language + query_1 + query_2
 
 export default {
   data () {
-    var date = new Date();
-    var year = date.getUTCFullYear();
-    var month = date.getUTCMonth() + 1;
+    const date = new Date();
+    const year = date.getUTCFullYear();
+    const month = date.getUTCMonth() + 1;
     return {
       title : "🎞　歴代高評価ムービー　🎞",
       detail: year + "/" + month + "現在　"+ "(TMDB評価ではなく興行収入順ソート)",
