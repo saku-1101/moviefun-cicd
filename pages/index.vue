@@ -39,7 +39,7 @@ import Rate from '~/components/highRate.vue'
     data () {
       return{
         cards: [
-          { title: 'Find your favorite', flex: 12, to: 'changePage', subtitle: '今の気分にピッタリな１作を診断👁'},
+          { title: 'Find your Movie!', flex: 12, to: 'changePage', subtitle: '今の気分にピッタリな１作を診断👁'},
         ],
       }
     },
