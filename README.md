@@ -7,9 +7,13 @@ https://moviefun-cicd-75zzd2vyqa-an.a.run.app/
 
 ### Architecture
   1 A repository for storing our code, GitHub
+  
   2 Cloud Build for doing some automation for us
+  
   3 Container Registry to store Docker container image
+  
   4 Cloud Run for hosting our app
+  
   <img width="434" alt="image" src="https://user-images.githubusercontent.com/74392116/212459155-725bd2ea-f85a-4d4d-be84-518265077d55.png">
 
 
