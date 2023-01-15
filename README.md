@@ -3,22 +3,26 @@ https://moviefun-cicd-75zzd2vyqa-an.a.run.app/
 
 
 ## CI/CD Pipeline Architecture
+#### What is the point?
+Continuous Integration and Continuous Delivery, known as CI and CD, introduces projects to an ongoing automation and continuous monitoring of having developers frequently check their code（testing）, build their code(building), and even deploy their code(deploying). Achieving this steps allows developers more focus on coding than being mindful of the infrastructure or the environment as well as  persistent and stable supply of the product, and which ends up with the success of the development team working in an agile way either DevOps or SRE.
 ### Motivation
+Developing alone drives me to relentless boredom. Instead, developing a project alone thinking as if there is someone who's working with me offers more fun. Besides, this agile way of working on the project would allow me to get used to up-coming teamwork as soon as possible.
 
 ### Architecture
-  1 A repository for storing our code, GitHub
-  
-  2 Cloud Build for doing some automation for us
-  
-  3 Container Registry to store Docker container image
-  
-  4 Cloud Run for hosting our app
-  
+  1. GitHub repository for storing our code
+  2. Cloud Build for doing some automation
+  3. Container Registry to store Docker container image
+  4. Cloud Run for hosting our app
+As we always do, first, I commit&push the entire project's code to the github repository(here) that includes cloudbuild.yaml file, which is a build configulation schema to enable [Cloud Build](https://cloud.google.com/build) automation work. Then, the [Cloud Build](https://cloud.google.com/build) that is set to trigger the specific branch's push action would be activated, and start doing its job - build the container image, creation of [Container Registry](https://cloud.google.com/container-registry) and push the image to [Container Registry](https://cloud.google.com/container-registry), and finally, activate the [Cloud Run](https://cloud.google.com/run) to deploy the project to the Internet. So, Git repository, Container Registry, and Cloud Run are all under controll of Cloud Build.
+
   <img width="434" alt="image" src="https://user-images.githubusercontent.com/74392116/212459155-725bd2ea-f85a-4d4d-be84-518265077d55.png">
 
 
 ### Development flow
 <img width="685" alt="image" src="https://user-images.githubusercontent.com/74392116/212458666-52758b6b-5818-42b1-ba54-d1ee82bb5974.png">
+<!-- 
+### Why GCP?
+I mean, it's affordable.  -->
 
 ## Build Setup
 
