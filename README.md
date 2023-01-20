@@ -6,7 +6,7 @@ https://moviefun-cicd-75zzd2vyqa-an.a.run.app/
 #### What is the point?
 Continuous Integration and Continuous Delivery, known as CI and CD, introduces projects to an ongoing automation and continuous monitoring of having developers frequently check their code（testing）, build their code(building), and even deploy their code(deploying). Achieving this steps allows developers more focus on coding than being mindful of the infrastructure or the environment as well as  persistent and stable supply of the product, and which ends up with the success of the development team working in an agile way either DevOps or SRE.
 ### Motivation
-Developing alone drives me to relentless boredom. Instead, developing a project alone thinking as if there is someone who's working with me offers more fun. Besides, this agile way of working on the project would allow me to get used to up-coming teamwork as soon as possible.
+Developing alone drives me to relentless boredom. Instead, developing a project alone thinking as if there is someone who's working with me offers more fun. Besides, this agile way of working on the project would allow me to get used to up-coming teamwork as soon as possible.　The pipline also supports the safe and agile product supply to the user, and which means we, the developers, can make the world the way happier ASAP.
 
 ### Architecture
   1. GitHub repository for storing our code
