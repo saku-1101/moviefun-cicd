@@ -20,9 +20,6 @@ As we always do, first, I commit&push the entire project's code to the github re
 
 ### Development flow
 <img width="685" alt="image" src="https://user-images.githubusercontent.com/74392116/212458666-52758b6b-5818-42b1-ba54-d1ee82bb5974.png">
-<!-- 
-### Why GCP?
-I mean, it's affordable.  -->
 
 ## Build Setup
 
