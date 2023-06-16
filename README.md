@@ -1,6 +1,6 @@
 # CI/CD achieved Moviefun 🍿🎥🎞️
-https://moviefun-cicd-75zzd2vyqa-an.a.run.app/
-
+~https://moviefun-cicd-75zzd2vyqa-an.a.run.app/~
+Unavailable
 
 ## CI/CD Pipeline Architecture
 #### What is the point?
